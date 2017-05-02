@@ -1,0 +1,16 @@
+@keyframes start {
+	from {left: -660px;}
+	to {left: -60px;}
+}
+@keyframes start-small {
+	from {top: -220px;}
+	to {top: 20px;}
+}
+@keyframes title {
+	from {left: -300px;}
+	to {left: 16px; }
+}
+@keyframes menu-item {
+	from {margin-left: -300px;}
+	to {margin-left: 0px; }
+}
