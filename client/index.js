@@ -17,7 +17,7 @@ const portfolioTitle = <Words word="Portfolio" highlight="8" />;
 const contactTitle = <Words word="Contact" highlight="1" />;
 
 const aboutBody = <p>This is a little section my biography, it will tell you about my past, personality, and hopes and aspirations.</p>;
-const profileBody = <p>I am currently working as a Front End Developer, learning and mastering frameworks (YUI, Sencha Touch, AngularJS, JQuery, NodeJS), and dipped my toes into Hybrid Mobile Applications.</p>;
+const profileBody = <p>I am currently working as a Front End Developer, learning and mastering frameworks (YUI, Sencha Touch, ReactJS, JQuery, NodeJS), and developed Hybrid Mobile Applications (Sencha Touch and <a href="http://astro.mobify.com" target="_new">Astro Framework</a>).</p>;
 const portfolioBody = <div>
 						<p><a href="http://swd.htpwebdesign.ca/" target="_blank">BCIT SWD Website (Web Design Program)</a></p>
 						<p><a href="https://www.rbauction.com/" target="_blank">Ritchie Bros. Website (Responsive Design)</a></p>
@@ -25,12 +25,14 @@ const portfolioBody = <div>
 					</div>;
 const contactBody = <p>You can reach me by <a href="mailto:adapdesigns@gmail.com">adapdesigns[at]gmail.com</a></p>;
 
+const aboutPhoto = '/test.jpg, /test.jpg, /test.jpg, ./test.jpg';
+
 
 ReactDOM.render(<div className="content">
 	<Header />
 	<Menu />
 	<div className="message-box-collection">
-		<MessageBox id="about" title={aboutTitle} body={aboutBody} />
+		<MessageBox id="about" title={aboutTitle} body={aboutBody} photo={aboutPhoto} />
 		<MessageBox id="profile" title={profileTitle} body={profileBody} />
 		<MessageBox id="portfolio" title={portfolioTitle} body={portfolioBody} />	
 		<MessageBox id="contact" title={contactTitle} body={contactBody} />	
