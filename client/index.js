@@ -54,7 +54,6 @@ const experienceBody = <div>
 const contactBody = <p>You can reach me by <a href="mailto:adapdesigns@gmail.com">adapdesigns[at]gmail.com</a></p>;
 const webpageBody = <p>This webpage designed was inspired by the aesthetics of JRPG Persona 5. It was developed using React.</p>;
 
-
 ReactDOM.render(<div className="content">
 	<Header />
 	<Menu />
