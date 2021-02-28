@@ -1,3 +1,7 @@
+$primary: #40E0D0;
+$dark: #000;
+$white: #FFF;
+$offwhite: #999;
 
 body {
 	background: #171717 ;
@@ -5,41 +9,68 @@ body {
 
 	font-family: sans-serif;
 	font-size: 15px;
-
 }
 
 .content {
 	max-width: 960px;
 	margin: 0 auto;
 }
+
 h3 {
 	transform: rotate(-25deg);
-	background: #000;
-	color: #FFF;
+	background: $dark;
+	color: $white;
 	display: inline-block;
 	padding: 10px;
 	font-weight: 800;
 	font-size: 24px;
-	box-shadow: 10px 5px 1px #F00;
+	box-shadow: 10px 5px 1px $primary;
 	position: absolute;
 	top: 70px;
 	left: 16px;
 	animation-name: title;
 	animation-duration: 0.25s;
 }
+#logo {
+	@media (min-width: 720px) and (min-height: 720px) {
+		position: fixed;
+	}
+}
+
+.subtitle {
+	font-size: 16px;
+	color: $offwhite;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+
+	@media (min-width: 720px) and (min-height: 720px) {
+		font-size: 22px;
+	}
+}
+.subtext {
+	font-size: 14px;
+	color: $white;
+
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+
+	@media (min-width: 720px) and (min-height: 720px) {
+		font-size: 20px;
+	}
+}
 
 a {
-	color: red;
+	color: $primary;
 	.menu & {
 		color: white;
 	}
 }
 .bars{
 	display: inline-block;
-	background: #F00;
+	background: $primary;
 	height: 4px;
 	width: 400px;
-	@media (min-width: 720px) {
+	@media (min-width: 720px) and (min-height: 720px) {
 		width: 600px;
 	}
 	transform: rotate(-35deg);
@@ -56,8 +87,8 @@ a {
 	animation-name: start-small;
 }
 .highlight {
-	background: #FFF;
-	color: #000;
+	background: $white;
+	color: $dark;
 	font-size: 115%;
 	font-weight: bold;
 }
@@ -77,26 +108,31 @@ a {
 	margin-top: 250px;
 	margin-left: 0px;
 	margin-bottom: 60px;
-	width: 50%;
+	width: calc(100% - 100px);
 	position: relative;
-	@media (min-width: 720px) {
-		position: absolute;
+	@media (min-width: 720px) and (min-height: 720px) {
+		position: fixed;
 		left: 0;
 		top: 220px;
-		width: auto;
+		width: 200px;
 		margin: 0;
 	}
-	color: #FFF;
+	color: $white;
 	text-transform: uppercase;
 	li {
-		background: #000;
+		background: $dark;
 		margin-top: 30px;
 		list-style: none;
 		padding: 5px;
-		transform: rotate(15deg);
+		transform: rotate(10deg);
 		animation-name: menu-item;
 		animation-duration: 0.2s;
-		box-shadow: 15px 2px 1px #F00;
+		box-shadow: 15px 2px 1px $primary;
+	}
+}
+.menu li:hover {
+	@media (min-width: 720px) and (min-height: 720px) {
+		box-shadow: 20px 4px 1px $primary;
 	}
 }
 .menu li:nth-child(2) {
@@ -107,9 +143,6 @@ a {
 	animation-delay: 0.2s;
 }
 
-.menu li:hover {
-	transform: scale(1.1) rotate(0deg) translate3d(0, 0, 0);
-}
 .message-box-container {
 	position: relative;
 
@@ -118,7 +151,7 @@ a {
 	margin-bottom: 45px;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 720px) and (min-height: 720px) {
 	.message-box-container {
 		width: calc(90% - 250px);
 		margin-left: 250px;
@@ -130,12 +163,6 @@ a {
 	border-top-width: 4px;
 	border-left-width: 4px;
 	background-color: black;
-
-
-	transform: perspective(700px) rotateY(-12deg) translate3d(0, 0, 0);
-	&.light {
-		transform: perspective(1000px) rotateY(-11deg) translate3d(0, 0, 0);
-	}
 
 	padding: 20px;
 	padding-top: 82px;
@@ -154,15 +181,16 @@ a {
 	width: 200px;
 	position: absolute;
 	top: 0;
-	@media (min-width: 720px) {
+	left: -10px;
+	@media (min-width: 720px) and (min-height: 720px) {
 		width: 320px;
 	}
 	.c {
 		font-size: 100%;
 	}
 	.highlight {
-		background: #000;
-		color: #FFF;
+		background: $dark;
+		color: $white;
 		font-size: 100%;
 		font-weight: bold;
 	}
@@ -176,7 +204,7 @@ a {
 	margin-left: 20px;
 	margin-right: 20px;
 	font-size: 18px;
-	@media (min-width: 720px) {
+	@media (min-width: 720px) and (min-height: 720px) {
 		font-size: 24px;
 	}
 	color: white;
@@ -185,4 +213,22 @@ a {
 			margin-top: 0px;
 		}
 	}
+}
+
+#top {
+	width: 60px;
+	height: 60px;
+	font-size: 48px;
+	border-radius: 30px;
+	background: $dark;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	color: $white;
+	text-align: center;
+	line-height: 60px;
+	border: 2px solid $white;
+	z-index: 9999;
+	transform: translate3d(0,0,0) perspective(0) skewX(0) rotateY(0deg);
+	-webkit-transform: translate3d(0,0,0);
 }

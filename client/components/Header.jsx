@@ -10,7 +10,7 @@ export default class Header extends React.Component {
 	<div>
 		<div className="bars"></div>
 		<div className="bars small"></div>
-		<h3>
+		<h3 id="logo">
 			<Word word="ADAPDESIGNS" highlight="4" />
 		</h3>
 	</div>);
